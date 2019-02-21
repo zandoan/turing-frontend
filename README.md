@@ -90,7 +90,7 @@ The format of param is as this REGEX: '/^([^\s]+),(DESC|ASC)$/'
 
 Example: 
 
-* https://backendapi.turing.com/categories?order=name|DESC
+* https://backendapi.turing.com/categories?order=name,DESC
  
 
 
