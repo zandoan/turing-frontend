@@ -8,21 +8,18 @@ Welcome to the Turing Challenge. Here you'll find some examples to reach your go
 [https://backendapi.turing.com/docs](https://backendapi.turing.com/docs)
 
 ## Authentication
-Just some endpoint required Authentication, you can check it in the documentation. The Customer login provides the Token to use in the other endpoints that required it.
+Just some endpoint required Authentication, you can check it in the documentation. 
+The Customer login provide the Token to use in the other endpoints that required it.
 
-
-Token's example: 
-
-```Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6MTIsIm5hbWUiOiJFZGVyIFRhdmVpcmEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTA3ODYyMjAsImV4cCI6MTU1MDg3MjYyMH0.QEGdry367EQNxBqzuUDCGJscWkq8YQwJdGBgV3hztR0```
+Token's example: ```Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6MTIsIm5hbWUiOiJFZGVyIFRhdmVpcmEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTA3ODYyMjAsImV4cCI6MTU1MDg3MjYyMH0.QEGdry367EQNxBqzuUDCGJscWkq8YQwJdGBgV3hztR0```
  
 The Token need to be in the header param **"user-key"**. Let's see an example below.
 
 Example Using login Authentication (jQuery):
 ```javascript
 $.ajax({ 
-         url: "https://backendapi.turing.com/customers/login",
+         url: "https://backendapi.turing.com/customer/login",
          data: {email: "CUSTOMER EMAIL", passsword: "CUSTOMER PASSWORD"},
-         headers: { 'user-key': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6MTIsIm5hbWUiOiJFZGVyIFRhdmVpcmEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTA3ODYyMjAsImV4cCI6MTU1MDg3MjYyMH0.QEGdry367EQNxBqzuUDCGJscWkq8YQwJdGBgV3hztR0' },
          type: "POST",
          success: function(resp) { console.log(resp.responseText); },
          error: function(error) { console.log(error.responseText); }
@@ -49,6 +46,17 @@ Response example:
   "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6MTIsIm5hbWUiOiJFZGVyIFRhdmVpcmEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTA3ODYyMjAsImV4cCI6MTU1MDg3MjYyMH0.QEGdry367EQNxBqzuUDCGJscWkq8YQwJdGBgV3hztR0",
   "expires_in": "24h"
 }
+```
+
+Example with header and token:
+```javascript
+$.ajax({ 
+         url: "https://backendapi.turing.com/customer",
+         headers: { 'user-key': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6MTIsIm5hbWUiOiJFZGVyIFRhdmVpcmEiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTA3ODYyMjAsImV4cCI6MTU1MDg3MjYyMH0.QEGdry367EQNxBqzuUDCGJscWkq8YQwJdGBgV3hztR0' },
+         type: "GET",
+         success: function(resp) { console.log(resp.responseText); },
+         error: function(error) { console.log(error.responseText); }
+});		
 ```
 
 ## Pagination
@@ -90,7 +98,7 @@ The format of param is as this REGEX: '/^([^\s]+),(DESC|ASC)$/'
 
 Example: 
 
-* https://backendapi.turing.com/categories?order=name,DESC
+* https://backendapi.turing.com/categories?order=name|DESC
  
 
 
