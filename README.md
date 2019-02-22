@@ -100,7 +100,11 @@ Example:
 
 * https://backendapi.turing.com/categories?order=name|DESC
  
+## Stripe Itegration
 
+Do as the example in this [link](https://stripe.com/docs/stripe-js/elements/quickstart) using this stripe public key **pk_test_NcwpaplBCuTL6I0THD44heRe**
+
+After that use the TOKEN created in the endpoint **"https://backendapi.turing.com/stripe/charge"**. 
 
 ## Errors
 
