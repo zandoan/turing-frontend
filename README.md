@@ -99,6 +99,51 @@ The format of param is as this REGEX: '/^([^\s]+),(DESC|ASC)$/'
 Example: 
 
 * https://backendapi.turing.com/categories?order=name|DESC
+
+## Facebook Login
+
+**APP ID:** 352854622106208
+
+To test your web login with facebook you'll need put your code in a HTTPS server. 
+
+```html
+<fb:login-button scope="public_profile,email" onlogin="logInWithFacebook();"></fb:login-button>
+  <div class="result"></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    logInWithFacebook = function () {
+      FB.login(function (response) {
+        if (response.authResponse) {
+          $.post("https://83c94203.ngrok.io/customers/facebook", { access_token: response.authResponse.accessToken }, function (data) {
+            $(".result").html(JSON.stringify(data));
+          });
+        } else {
+          alert('User cancelled login or did not fully authorize.');
+        }
+      });
+      return false;
+    };
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '352854622106208',
+        cookie: true,
+        xfbml: true,
+        version: 'v2.2'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+  </script>
+```
+
  
 ## Stripe Itegration
 
