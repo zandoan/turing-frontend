@@ -104,8 +104,14 @@ Example:
 
 **APP ID:** 352854622106208
 
-To test your web login with facebook you'll need put your code in a HTTPS server. 
+to test your application you can use ngrok, as in the example below:
 
+* Create a account (https://ngrok.com/)
+* ```terminal $ ./ngrok authtoken 2UfRLdXvX5exYu86bJDyu_5UmDhqR2adSoW3TPLaJ00```
+* ```terminal $ ./ngrok http 3000```
+* Test using https address generated.
+
+Below you can see a simple example to do a login with facebook.
 ```html
 <fb:login-button scope="public_profile,email" onlogin="logInWithFacebook();"></fb:login-button>
   <div class="result"></div>
