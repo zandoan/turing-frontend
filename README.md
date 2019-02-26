@@ -114,7 +114,7 @@ To test your web login with facebook you'll need put your code in a HTTPS server
     logInWithFacebook = function () {
       FB.login(function (response) {
         if (response.authResponse) {
-          $.post("https://83c94203.ngrok.io/customers/facebook", { access_token: response.authResponse.accessToken }, function (data) {
+          $.post("https://backendapi.turing.com/customers/facebook", { access_token: response.authResponse.accessToken }, function (data) {
             $(".result").html(JSON.stringify(data));
           });
         } else {
