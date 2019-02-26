@@ -108,7 +108,7 @@ to test your application you can use ngrok, as in the example below:
 
 * Create a account (https://ngrok.com/)
 * ```terminal $ ./ngrok authtoken 2UfRLdXvX5exYu86bJDyu_5UmDhqR2adSoW3TPLaJ00```
-* ```terminal $ ./ngrok http 3000```
+* ```terminal $ ./ngrok http 3000``` (Place the port you are using)
 * Test using https address generated.
 
 Below you can see a simple example to do a login with facebook.
