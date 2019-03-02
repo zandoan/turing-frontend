@@ -7,6 +7,12 @@ Welcome to the Turing Challenge. Here you'll find some examples to reach your go
 ## Root Endpoint 
 [https://backendapi.turing.com/docs](https://backendapi.turing.com/docs)
 
+## Images directory
+https://backendapi.turing.com/images/products/
+
+Example:
+https://backendapi.turing.com/images/products/wreath.gif
+
 ## Authentication
 Just some endpoint required Authentication, you can check it in the documentation. 
 The Customer login provide the Token to use in the other endpoints that required it.
