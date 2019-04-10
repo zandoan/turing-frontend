@@ -4,8 +4,11 @@
 ## Welcome
 Welcome to the Turing Challenge. Here you'll find some examples to reach your goal. 
 
-## Root Endpoint 
+## Swagger Documentation
 [https://backendapi.turing.com/docs](https://backendapi.turing.com/docs)
+
+## Root Endpoint 
+[https://backendapi.turing.com](https://backendapi.turing.com)
 
 ## Images directory
 https://backendapi.turing.com/images/products/
